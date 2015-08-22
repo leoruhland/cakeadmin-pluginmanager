@@ -15,11 +15,11 @@
 use Cake\Routing\Router;
 
 Router::plugin('PluginManager', function ($routes) {
-    $routes->fallbacks();
-});
+    $routes->prefix('Admin', function ($routes) {
 
-Router::prefix('admin', function ($routes) {
-    $routes->plugin('PluginManager', ['path' => '/plugin_manager'], function ($routes) {
+        $routes->connect('/:controller/:action/**', [
+        ]);
+
         $routes->fallbacks('InflectedRoute');
     });
     $routes->fallbacks('InflectedRoute');
