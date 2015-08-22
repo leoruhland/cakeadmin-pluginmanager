@@ -65,8 +65,8 @@ class PluginManager
         if($command !== ''){
             echo '';
             putenv('COMPOSER_HOME=' . ROOT);
-            putenv('COMPOSER_CACHE_DIR=' . ROOT.'/tmp/composer');
-            $vendorFolder = ROOT.'/vendor/bin/composer';
+            putenv('COMPOSER_CACHE_DIR=' . ROOT.DS.'tmp'.DS.'composer');
+            $vendorFolder = ROOT.DS.'vendor'.DS'bin'.DS.'composer';
 
             $input = new StringInput($command.' -v -d '.ROOT);
             /*
